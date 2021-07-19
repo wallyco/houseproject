@@ -1,4 +1,4 @@
-package waketech.project.teambravo;
+package project.house;
 
 public class House {
 	
@@ -38,27 +38,34 @@ public class House {
 		setPlot(newPlot);
 	}
 	
-	public double getTotalArea() 
-	{
-	 return  ( getBedrooms() 
-			 * BEDROOM_AREA) 
-			 + getLivingRoomArea() 
-			 + getFamilyRoomArea();
+	public double getTotalArea() {
+		return  ( getBedrooms() 
+				 * BEDROOM_AREA) 
+				 + getLivingRoomArea() 
+				 + getFamilyRoomArea();
 	}
 	
 	
 	public String toString() {
-		return (  " House Style: " + getStyle() + "|" 
+		return (  " \n House Style: " + getStyle() + "|" 
 				+ " Bedrooms: " + getBedrooms() + "|" 
 				+ " Family room area: " + getFamilyRoomArea() + "|" 
 				+ " Living room area: " + getLivingRoomArea() + "|"
 				+ " Plot: "+ getPlot() + "|" 
-				+ " Square feet: " + getTotalArea() + "\n\n"
+				+ " Square feet: " + getTotalArea() + "\n"
 				);
 	}
 	
 	public int compareArea(House newHouse) {
-		return (int) (this.getTotalArea() - newHouse.getTotalArea());
+		int comparedArea = (int) (this.getTotalArea() - newHouse.getTotalArea());
+		if(comparedArea < 0) {
+			return -1;
+		}
+		if(comparedArea > 0) {
+			return 1;
+		}else {
+			return 0;
+		}
 	}
 	
 

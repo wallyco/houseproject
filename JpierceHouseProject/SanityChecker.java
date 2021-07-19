@@ -1,5 +1,4 @@
-package waketech.project.teambravo;
-
+package project.house;
 import java.util.ArrayList;
 
 public class SanityChecker {
@@ -34,8 +33,8 @@ public class SanityChecker {
 		other = sd.get(0);
 		ArrayList<House> al = sd.list();
 		al = sd.listByArea(1555.5, 2500.2);
-//		al = sd.listByBedrooms(3, 6);
-		al = sd.listByPlot​(.2, .6);
+		al = sd.listByBedrooms(3, 6);
+		al = sd.listByPlot(.2, .6);
 		a = sd.size();
 		al = sd.sortByArea();
 		al = sd.sortByPlot();
